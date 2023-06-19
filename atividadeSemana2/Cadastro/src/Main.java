@@ -1,10 +1,12 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args){
-        List<Cadastro> registro = new ArrayList<>();
+        Set<Cadastro> registro = new LinkedHashSet<>();
 
         Cadastro registro1 = new Cadastro();
 
@@ -22,6 +24,11 @@ public class Main {
         registro1.setEmpregoAtual(true);
         registro1.setPretencaoSalarial(4000.00);
         registro1.setHabilidade("Consultas SQL, experiência em banco Oracle, Experiência em atendimetno ao cliente, familiariadade com Git, Lógica de Programação, Java");
+
+        registro.add(registro1);
+
+        ArquivoCSV csv = new ArquivoCSV();
+        csv.gerarArquivoCsv(registro);
 
     }
 }
